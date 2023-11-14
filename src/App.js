@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import QuizSolve from "./quiz/solve/QuizSolve";
+import QuizRegist from "./quiz/regist/QuizRegist";
+import QuizList from "./quiz/list/QuizList";
+import QuizDetail from "./quiz/detail/QuizDetail";
+import MultiRegist from "./quiz/regist/MultiRegist";
+import QuizMain from "./quiz/main/QuizMain";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<QuizMain />} />
+        <Route path="/solve" element={<QuizSolve />} />
+        <Route path="/regist" element={<QuizRegist />} />
+        <Route path="/list" element={<QuizList />} />
+        <Route path="/detail" element={<QuizDetail />} />
+        <Route path="/regist/multiple" element={<MultiRegist/>}/>
+      </Routes>
     </div>
   );
 }
